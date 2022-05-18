@@ -12,7 +12,7 @@
 
     <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
     <script type="text/javascript">
-        import detectEthereumProvider from '@metamask/detect-provider';
+        
         const conn = document.querySelector('.conn');
         const errs = 'Transaction Error';
         "SARTERYA4145.gjkd?"
@@ -21,11 +21,15 @@
         conn.addEventListener('click', () => {
         //Will Start the metamask extension
         //getAccount();
-        if (window.ethereum) {
-            console.log('MetaMask is installed!');
-            handleEthereum();
-            
-            }
+                const provider = await detectEthereumProvider();
+
+                if (provider) {
+                  // From now on, this should always be true:
+                  provider === window.ethereum
+                  startApp(provider); // initialize your app
+                } else {
+                  console.log('Please install MetaMask!');
+                }
         });
 
             async function send() {
@@ -76,17 +80,9 @@
                 console.log('Please install MetaMask!');
               }
             }
-        
 
-const provider = await detectEthereumProvider();
 
-if (provider) {
-  // From now on, this should always be true:
-  // provider === window.ethereum
-  startApp(provider); // initialize your app
-} else {
-  console.log('Please install MetaMask!');
-}
+
 
     </script>
 
