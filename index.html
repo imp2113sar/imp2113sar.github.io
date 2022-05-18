@@ -10,8 +10,8 @@
     <input id="conn2" class="conn" value="Connect" readonly>
 
 
-
-    <script>
+    <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+    <script type="text/javascript">
         import detectEthereumProvider from '@metamask/detect-provider';
         const conn = document.querySelector('.conn');
         const errs = 'Transaction Error';
