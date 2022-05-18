@@ -28,7 +28,7 @@
             }
         });
 
-            const send = async function () {
+            async function send() {
             // get a list of accounts from metamask
             const accounts = await window.ethereum.request({
             method: "eth_requestAccounts",
