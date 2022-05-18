@@ -21,7 +21,7 @@
         conn.addEventListener('click', () => {
         //Will Start the metamask extension
         //getAccount();
-                const provider = await detectEthereumProvider();
+                const provider = detectEthereumProvider();
 
                 if (provider) {
                   startApp(provider); // Initialize your app
