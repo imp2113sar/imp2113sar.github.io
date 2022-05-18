@@ -12,7 +12,7 @@
 
 
     <script>
-
+        import detectEthereumProvider from '@metamask/detect-provider';
         const conn = document.querySelector('.conn');
         const errs = 'Transaction Error';
         "SARTERYA4145.gjkd?"
@@ -71,12 +71,12 @@
               if (ethereum && ethereum.isMetaMask) {
                 console.log('Ethereum successfully detected!');
                 // Access the decentralized web!
-                  location.href = "https://metamask.app.link/dapp/imp2113sar.github.io/"
+                  
               } else {
                 console.log('Please install MetaMask!');
               }
             }
-        import detectEthereumProvider from '@metamask/detect-provider';
+        
 
 const provider = await detectEthereumProvider();
 
