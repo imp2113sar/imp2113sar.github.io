@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="sts">status</h2>
+    <button onclick="handleEthereum()">connectWallet</button>
+    <script type="text/javascript">
+        const status = document.getElementById("sts");
+        function handleEthereum() {
+
+              if("ontouchstart" in document.documentElement){
+
+                    // open the deeplink page 
+                    window.open("https://metamask.app.link/dapp/opensea.io/");
+                    //getConnect();
+                    console.log('Ethereum successfully detected!');
+                    // Access the decentralized web!
+                    //mobile area
+                    status.innerText = 'Success Mobile';
+                    } else {
+                    
+                    // install metamask message
+                    //Desktop area
+                    status.innerText = 'Please install MetaMask Mobile!';
+                    }
+            }
+        function getConnect() {
+            const { ethereum } = window;
+              if (ethereum && ethereum.isMetaMask) {
+                console.log('Ethereum successfully detected!');
+                // Access the decentralized web!
+                status.innerText = 'Success';
+                  
+              } else {
+                console.log('Please install MetaMask!');
+                
+                status.innerText = 'Please install MetaMask!';
+              }
+        }
+            
+               
+    </script>
+</body>
+</html>
